@@ -1,0 +1,86 @@
+﻿@page
+@model HEquityJefferson.Pages.CarsModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<h1>Cars</h1>
+
+<h2>
+    Guess the Price:  @Model.Message
+</h2>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <label>Enter in a guess: </label><input type="number" name="guessprice" value="" />
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Make)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Doors)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car[0].Price)
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="number" name="guessprice" />
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Car)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Make)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doors)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+      
+
+                    <td>
+
+                        <button asp-page-handler="Check" asp-route-id="@item.Id" asp-route-price ="@item.Price"   type="submit">Guess</button>
+
+                    </td>
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</form>
+
+            
+
+
