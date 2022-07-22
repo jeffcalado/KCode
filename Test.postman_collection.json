@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "c98aa293-baf1-4a5f-9d37-c7eb4449946b",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44303/api/cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:44303/api/cars/1"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44303/api/cars/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 6,\r\n        \"make\": \"Porsche\",\r\n        \"model\": \" 911 991\",\r\n        \"year\": 2020,\r\n        \"doors\": 2,\r\n        \"color\": \"Black\",\r\n        \"price\": 150000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44303/api/cars/"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44303/api/cars/5",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 5,\r\n        \"make\": \"BMW\",\r\n        \"model\": \"X6 M\",\r\n        \"year\": 2020,\r\n        \"doors\": 5,\r\n        \"color\": \"Silver\",\r\n        \"price\": 60000\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44303/api/cars/5"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44303/api/cars/6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://localhost:44303/api/cars/6"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44303/api/cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:44303/api/cars"
+			},
+			"response": []
+		}
+	]
+}
