@@ -45,8 +45,6 @@ namespace HEquityJefferson.Controllers
         }
 
         // PUT: api/Cars/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCar(int id, Car car)
         {
@@ -77,8 +75,6 @@ namespace HEquityJefferson.Controllers
         }
 
         // POST: api/Cars
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Car>> PostCar(Car car)
         {
@@ -110,25 +106,6 @@ namespace HEquityJefferson.Controllers
             return _context.Car.Any(e => e.Id == id);
         }
 
-        //// GET: api/Cars/Check/5
-        //[HttpGet("Check/{id}")]
-        //public async Task<ActionResult<Car>> GetPrice(int idCar)
-        //{
-        //    var car = await _context.Car.FindAsync(idCar);
 
-
-
-        //    return car;
-        //}
-        //[HttpPost]
-        //public ActionResult Submit(FormCollection fc)
-        //{
-        //    var car = await _context.Car.FindAsync(fc["Id"]);
-
-        //    M = fc["Price"];
-        //    ViewBag.Name = fc["Id"];
-
-        //    return View("Index");
-        //}
     }
 }

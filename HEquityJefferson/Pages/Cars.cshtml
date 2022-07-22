@@ -3,14 +3,43 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "Cars";
+    ViewData["Title"] = "Cars - Jefferson Calado";
+}
+<script src="~/js/scripts.js"></script>
+<link href="~/css/styles.css" rel="stylesheet" />
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Guess the price - Jefferson Calado</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    </div>
+</nav>
+
+@{if (Model.Success == "1")
+    {
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+
+            <p>@Model.Message</p>
+            <hr>
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Give your best shot!</h4>
+
+            <p>@Model.Message</p>
+            <hr>
+        </div>
+      
+    }
+
 }
 
-<h1>Cars</h1>
 
-<h2>
-    Guess the Price:  @Model.Message
-</h2>
 <form method="post">
     <table class="table">
         <thead>
@@ -40,11 +69,7 @@
                 </th>
                 <th></th>
             </tr>
-            <tr>
-                <th>
-                    <input type="number" name="guessprice" />
-                </th>
-            </tr>
+
         </thead>
         <tbody>
             @foreach (var item in Model.Car)
@@ -65,11 +90,11 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Color)
                     </td>
-      
+
 
                     <td>
 
-                        <button asp-page-handler="Check" asp-route-id="@item.Id" asp-route-price ="@item.Price"   type="submit">Guess</button>
+                        <button asp-page-handler="Check" asp-route-id="@item.Id" asp-route-price="@item.Price" type="submit">Guess</button>
 
                     </td>
 
@@ -81,6 +106,6 @@
     </table>
 </form>
 
-            
+
 
 

@@ -48,14 +48,14 @@ namespace HEquityJefferson
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
             var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetService<HEquityJeffersonContext>();
 

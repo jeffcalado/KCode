@@ -21,22 +21,14 @@ namespace HEquityJefferson.Pages
 
         public IList<Car> Car { get; set; }
         public string Message { get; set; }
+        public string Success { get; set; }
 
         public async Task OnGetAsync()
         {
             Car = await _context.Car.ToListAsync();
         }
 
-       // public async Task<IActionResult>  OnPostCheck(int id)
-       // {
-        //    //var car = _context.Car.Find(id);
-            //Car = await _context.Car.ToListAsync();
-            //Message = "ergerter";// string.Format("Price: {0}", car.Price);
 
-            //return RedirectToPage();
-           
-          
-       // }
 
         public async void OnPostCheck(int id, decimal price, decimal guessprice)
         {
@@ -49,10 +41,13 @@ namespace HEquityJefferson.Pages
 
             if ( guessprice >= Minprice && guessprice <=MaxPrice)
             {
-                Message = "You are great! Iuupeee! ";
+                Success = "1";
+                Message = @"Aww yeah, You are great! Iuupeee!";
+
             }
             else
             {
+                Success = "0";
                 Message = "Nice try =( ";
             }
 
